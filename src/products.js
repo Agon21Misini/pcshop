@@ -1,0 +1,130 @@
+export const productsCollection = [
+  {
+    name: "Kompjuter HP",
+    description:
+      'Kompjuter HP 24-dp0006nc, 23.8", AMD Ryzen 5, 16GB DDR4, 512GB SSD, AMD Radeon Graphics, i argjendtë',
+    price: 799.5,
+    quantity: 10,
+    category: "AIO Computer",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/136338/img/0.jpg",
+  },
+  {
+    name: "Kompjuter Lenovo",
+    description:
+      'Kompjuter Lenovo V30a-24IIL, 23.8", Intel Core i3, 8GB RAM, 1TB HDD, Intel UHD Graphics',
+    price: 679.5,
+    quantity: 10,
+    category: "AIO Computer",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/164038/img/0.jpg",
+  },
+  {
+    name: "Kompjuter Apple",
+    description:
+      'Kompjuter Apple iMac 24" 4.5K Retina M1 / 16GB RAM / 256GB SSD / 7-core GPU, i argjendtë',
+    price: 1651.5,
+    quantity: 10,
+    category: "AIO Computer",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/161891/img/0.jpg",
+  },
+  {
+    name: "Laptop HP ProBook",
+    description:
+      'Laptop HP ProBook 450 G7, 15.6"", Intel Core i7, 16GB RAM, 512GB SSD, Intel UHD Graphics 620, argjendë',
+    price: 931.5,
+    quantity: 10,
+    category: "Laptop",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/126426/img/0.jpg",
+  },
+  {
+    name: "Laptop Dell XPS",
+    description:
+      'Laptop Dell XPS 17 (9720), 17", Intel Core i7, 16GB RAM, 1TB SSD, NVIDIA GeForce RTX 3050, i argjendtë',
+    price: 3012.5,
+    quantity: 10,
+    category: "Laptop",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/184072/img/0.jpg",
+  },
+  {
+    name: "Laptop Apple MacBook",
+    description:
+      'Laptop Apple MacBook Pro 14 (2021), 14.2", M1 Pro 8-bërthamor, 16GB RAM LPDDR4X, 512GB SSD, GPU 14-bërthamor, i argjendtë',
+    price: 2149.5,
+    quantity: 10,
+    category: "Laptop",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/170569/img/0.jpg",
+  },
+  {
+    name: "Memorie operative 16GB",
+    description: "Memorie operative G.SKill TridentZ, 16GB (2x 8GB) DDR4 3200",
+    price: 118.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/46252/img/0.jpg",
+  },
+  {
+    name: "Hard Disk 500GB",
+    description: 'Hard Disk HDD WD5000AZLX, 3.5", 500GB',
+    price: 58.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/9381/img/0.jpg",
+  },
+  {
+    name: "Kasë Zalman",
+    description: "Kasë Zalman Z9 NEO Plus, e bardhë",
+    price: 67.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/73296/img/0.jpg",
+  },
+  {
+    name: "SSD 1.92TB",
+    description:
+      'Disk i brendshëm SSD ADATA Ultimate SU630, 2.5", 1.92TB, i zi',
+    price: 219.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/160609/img/0.jpg",
+  },
+  {
+    name: "Çantë Acer",
+    description: 'Çantë Acer për laptop 14", e zezë',
+    price: 34.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/119410/img/0.jpg",
+  },
+  {
+    name: "Karikues Patona,",
+    description: "Karikues Patona, 19V, 4.74A, 90W, 5x2.5mm",
+    price: 29.5,
+    quantity: 10,
+    category: "Aksesorë",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/110694/img/0.jpg",
+  },
+  {
+    name: "iPhone 12 Pro Max",
+    description:
+      'Celular Apple iPhone 12 Pro Max, 6.7" FHD+, 4GB RAM, 512GB. ngjyrë grafiti',
+    price: 1699.5,
+    quantity: 10,
+    category: "Smart Phone",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/139868/img/0.jpg",
+  },
+  {
+    name: "iPhone 13 Pro Max",
+    description: 'Celular Apple iPhone 13 Pro Max, 6.7" FHD+, 1TB, i argjendtë',
+    price: 2321.5,
+    quantity: 10,
+    category: "Smart Phone",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/167700/img/0.jpg",
+  },
+  {
+    name: "Samsung Galaxy Z Fold3",
+    description: "Celular Samsung Galaxy Z Fold3 5G, 256GB, i argjendtë",
+    price: 1949.5,
+    quantity: 10,
+    category: "Smart Phone",
+    imageURL: "https://hhstsyoejx.gjirafa.net/gj50/img/163973/img/0.jpg",
+  },
+];
