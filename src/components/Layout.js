@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line
 import Footer from "./Footer";
 import Header from "./Header";
 import Loader from "./Loader";

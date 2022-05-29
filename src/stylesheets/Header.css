@@ -1,0 +1,20 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.navbar {
+  background-color: #003f5c !important;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+}

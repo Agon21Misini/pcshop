@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 import Loader from "../components/Loader";
 
 function LoginPage() {
@@ -9,21 +9,19 @@ function LoginPage() {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const auth = getAuth();
-  const login = () => {
-    setLoading(true);
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        setLoading(false);
-        window.location.href = "/";
-      })
-      .catch((error) => {
-        setLoading(false);
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+  const login = async () => {
+    try {
+      setLoading(true);
+      const result = await signInWithEmailAndPassword(auth, email, password);
+      localStorage.setItem("currentUser", JSON.stringify(result));
+      toast.success("Login successfull");
+      setLoading(false);
+      window.location.href = "/";
+    } catch (error) {
+      console.log(error);
+      toast.error("Login failed");
+      setLoading(false);
+    }
   };
   return (
     <div className="login-parent">

@@ -1,17 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaCartPlus } from "react-icons/fa";
+import { FaBars, FaCartPlus, FaUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 function Header() {
   const { cartItems } = useSelector((state) => state.cartReducer);
+  const { user } = JSON.parse(localStorage.getItem("currentUser"));
+
+  const logout = () => {
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  };
 
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
-            PC Online Shop
+            PC ONLINE SHOP
           </Link>
           <button
             className="navbar-toggler"
@@ -30,7 +36,7 @@ function Header() {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  User
+                  <FaUser /> {user.email.substring(0, user.email.length - 10)}
                 </Link>
               </li>
               <li className="nav-item">
@@ -39,10 +45,11 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/" onClick={logout}>
                   Logout
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link" to="/cart">
                   <FaCartPlus /> {cartItems.length}

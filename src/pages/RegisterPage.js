@@ -2,35 +2,36 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Loader from "../components/Loader";
-// import { toast } from "react-toastify";
-
+import { toast } from "react-toastify";
 function RegisterPage() {
-  const [displayedName, setDisplayedName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const auth = getAuth();
 
-  const register = () => {
-    setLoading(true);
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        user.displayName = displayedName;
-        alert(user.displayName, user.email);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setLoading(false);
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
-      });
+  const register = async () => {
+    try {
+      setLoading(true);
+      const result = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(result);
+      setLoading(false);
+      toast.success("Registration Successfull");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch (error) {
+      console.log(error);
+      toast.error("Registration failed");
+    }
   };
 
   return (
-    <div className="register-parent">
+    <div className="register-parent" id="alert">
       {loading && <Loader />}
       <div className="register-top"></div>
       <div className="row justify-content-center">
@@ -42,15 +43,6 @@ function RegisterPage() {
 
             <input
               type="text"
-              className="form-control"
-              placeholder="displayed name"
-              value={displayedName}
-              onChange={(e) => {
-                setDisplayedName(e.target.value);
-              }}
-            />
-            <input
-              type="email"
               className="form-control"
               placeholder="email"
               value={email}
@@ -68,7 +60,7 @@ function RegisterPage() {
               }}
             />
             <input
-              type="pasword"
+              type="password"
               className="form-control"
               placeholder="confirm password"
               value={confirmPassword}

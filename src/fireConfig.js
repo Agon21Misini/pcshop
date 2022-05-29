@@ -15,6 +15,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const fireDB = getFirestore(app);
+// eslint-disable-next-line
 const auth = getAuth(app);
 
 export default fireDB;
