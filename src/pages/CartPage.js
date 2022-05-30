@@ -6,15 +6,12 @@ import Layout from "../components/Layout";
 import { addDoc, collection } from "firebase/firestore";
 import fireDB from "../fireConfig";
 import { toast } from "react-toastify";
-import { FaMinus, FaPlus } from "react-icons/fa";
 
 function CartPage() {
   const { cartItems } = useSelector((state) => state.cartReducer);
   const [totalAmount, setTotalAmount] = useState(0);
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-  const [quantity, setQuantity] = useState(1);
-  const [priceTimesQuantity, setPriceTimesQuantity] = useState(0);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -27,7 +24,7 @@ function CartPage() {
   useEffect(() => {
     let temp = 0;
     cartItems.forEach((cartItem) => {
-      temp = Number(temp) + Number(cartItem.price * quantity);
+      temp = Number(temp) + Number(cartItem.price);
     });
     setTotalAmount(temp);
   }, [cartItems]);
@@ -66,14 +63,6 @@ function CartPage() {
       setLoading(false);
       toast.error("Order failed");
     }
-  };
-
-  const decrease = () => {
-    setQuantity(quantity - 1);
-  };
-
-  const increase = () => {
-    setQuantity(quantity + 1);
   };
 
   return (
