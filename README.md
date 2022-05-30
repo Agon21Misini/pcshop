@@ -1,4 +1,5 @@
 ## Deoployed site: https://pc-online-shop-7fd929.netlify.app/
+## Firestore Database: https://console.firebase.google.com/u/0/project/pc-online-shop/firestore/data/~2Forders~2FI7XhGEV1XQ2Dv2vTfPBS
 
 # Getting Started with Create React App
 
