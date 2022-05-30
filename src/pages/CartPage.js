@@ -78,14 +78,12 @@ function CartPage() {
 
   return (
     <Layout loading={loading}>
-      <table className="table mt-3">
+      <table className="table mt-3 text-center">
         <thead>
           <tr>
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Quantity</th>
-            <th>Total Price</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -105,18 +103,6 @@ function CartPage() {
                 <td>{item.name}</td>
                 <td>{item.price}</td>
                 <td>
-                  <div className="product-text quantity-box d-flex">
-                    <div className="action-btns minus px-3">
-                      <FaMinus size={20} cursor="pointer" onClick={decrease} />
-                    </div>
-                    <div>{quantity}</div>
-                    <div className="action-btns plus px-3">
-                      <FaPlus size={20} cursor="pointer" onClick={increase} />
-                    </div>
-                  </div>
-                </td>
-                <td>{item.price * quantity} €</td>
-                <td>
                   <FaTrash
                     cursor="pointer"
                     onClick={() => deleteFromCart(item)}
@@ -128,11 +114,13 @@ function CartPage() {
         </tbody>
       </table>
 
-      <div className="d-flex justify-content-end">
-        <h1 className="total-amount">Total Amount = {totalAmount} €</h1>{" "}
-      </div>
-      <div className="d-flex justify-content-end mt-3">
-        <button onClick={handleShow}>PLACE ORDER</button>
+      <div className="d-flex justify-content-between">
+        <div>
+          <h1 className="total-amount">Total Amount = {totalAmount} €</h1>{" "}
+        </div>
+        <div>
+          <button onClick={handleShow}>PLACE ORDER</button>
+        </div>
       </div>
 
       <Modal show={show} onHide={handleClose}>
