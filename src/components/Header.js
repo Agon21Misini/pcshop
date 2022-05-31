@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaCartPlus, FaUser } from "react-icons/fa";
+import { FaCartPlus, FaUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
 function Header() {
