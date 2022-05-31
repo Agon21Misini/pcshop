@@ -14,50 +14,60 @@ function Header() {
 
   return (
     <div className="header">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            PC ONLINE SHOP
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon">
-              <FaBars size={25} color="white" />
-            </span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  <FaUser /> {user.email.substring(0, user.email.length - 10)}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/orders">
-                  Orders
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/" onClick={logout}>
-                  Logout
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/cart">
-                  <FaCartPlus /> {cartItems.length}
-                </Link>
-              </li>
-            </ul>
+      <nav className="navbar">
+        <Link
+          style={{ color: "white", textDecoration: "none" }}
+          className="logo"
+          to="/"
+        >
+          PC ONLINE SHOP
+        </Link>
+        <ul className="nav-links">
+          <input type="checkbox" id="checkbox_toggle" />
+          <label htmlFor="checkbox_toggle" className="hamburger">
+            &#9776;
+          </label>
+          <div className="menu">
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                className="nav-links active"
+                aria-current="page"
+                to="/"
+              >
+                <FaUser /> {user.email.substring(0, user.email.length - 10)}
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                className="nav-links"
+                to="/orders"
+              >
+                Orders
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                className="nav-links"
+                to="/"
+                onClick={logout}
+              >
+                Logout
+              </Link>
+            </li>
+            <li>
+              <Link
+                style={{ color: "white", textDecoration: "none" }}
+                className="nav-links"
+                to="/cart"
+              >
+                <FaCartPlus /> {cartItems.length}
+              </Link>
+            </li>
           </div>
-        </div>
+        </ul>
       </nav>
     </div>
   );

@@ -53,3 +53,12 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 768px) {
+  .filter {
+    width: 245px;
+  }
+  .search {
+    width: 245px;
+  }
+}

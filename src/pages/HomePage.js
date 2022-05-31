@@ -53,18 +53,18 @@ function Homepage() {
   return (
     <Layout loading={loading}>
       <div className="container">
-        <div className="d-flex w-50 align-items-center my-3 justify-content-center">
+        <div className="d-flex w-100 align-items-center my-3 justify-content-center search-filter">
           <input
             type="text"
             value={searchKey}
             onChange={(e) => {
               setSearchKey(e.target.value);
             }}
-            className="form-control mx-2"
+            className="form-control mx-2 search"
             placeholder="search items"
           />
           <select
-            className="form-control mt-3"
+            className="form-control mt-3 filter"
             value={filterType}
             onChange={(e) => {
               setFilterType(e.target.value);
